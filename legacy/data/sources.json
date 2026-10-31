@@ -1,0 +1,11 @@
+{
+  "default": [
+    { "name": "Señal 1 (HLS)", "type": "hls", "url": "" },
+    { "name": "YouTube oficial", "type": "youtube", "url": "" }
+  ],
+  "games": {
+    "_ejemplo_mlb-123456": [
+      { "name": "Señal alternativa", "type": "hls", "url": "https://tu-servidor/ruta/stream.m3u8" }
+    ]
+  }
+}

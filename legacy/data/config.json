@@ -1,0 +1,10 @@
+{
+  "appName": "SportV",
+  "refreshSeconds": 30,
+
+  "football": {
+    "token": "",
+    "dateWindowDays": 1,
+    "competitions": ["PL", "PD", "SA", "BL1", "FL1", "DED", "PPL", "BSA", "CL", "WC"]
+  }
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Centro de partidos en vivo con reproductor propio y sin anuncios." />
+  <title>SportV · Partidos en vivo</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚾</text></svg>" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#" aria-label="SportV">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">SportV</span>
+      </a>
+
+      <nav class="segmented" id="sportTabs" role="tablist" aria-label="Deporte">
+        <span class="seg-thumb" id="segThumb" aria-hidden="true"></span>
+        <button class="seg-btn is-active" data-sport="mlb" role="tab" aria-selected="true">Béisbol</button>
+        <button class="seg-btn" data-sport="football" role="tab" aria-selected="false">Fútbol</button>
+      </nav>
+
+      <div class="datenav">
+        <button class="icon-btn" id="prevDay" title="Día anterior" aria-label="Día anterior">&#8249;</button>
+        <button class="date-pill" id="datePill" title="Volver a hoy"><span id="dateLabel">Hoy</span></button>
+        <button class="icon-btn" id="nextDay" title="Día siguiente" aria-label="Día siguiente">&#8250;</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="col-list" aria-label="Lista de partidos">
+      <div class="col-head">
+        <h2 id="listTitle">Partidos</h2>
+        <span class="badge" id="listCount">&mdash;</span>
+      </div>
+
+      <div class="notice hidden" id="notice"></div>
+
+      <div class="game-list" id="gameList" aria-live="polite">
+        <div class="skeleton-wrap">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="col-stage" aria-label="Reproductor">
+      <div class="stage">
+
+        <div class="stage-empty" id="stageEmpty">
+          <div class="glyph" aria-hidden="true">&#9654;</div>
+          <h3>Elige un partido</h3>
+          <p>Selecciona un juego de la lista para abrir el reproductor.</p>
+        </div>
+
+        <div class="stage-body hidden" id="stageBody">
+
+          <div class="matchup" id="matchup"></div>
+
+          <div class="player" id="player">
+            <video id="video" playsinline crossorigin="anonymous"></video>
+            <iframe id="frame" class="hidden" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+
+            <div class="player-msg hidden" id="playerMsg"></div>
+            <div class="player-spinner hidden" id="playerSpinner"></div>
+
+            <div class="controls" id="controls">
+              <div class="progress" id="progress" role="slider" tabindex="0" aria-label="Progreso">
+                <div class="progress-track">
+                  <div class="progress-buffer" id="progressBuffer"></div>
+                  <div class="progress-played" id="progressPlayed"><span class="knob"></span></div>
+                </div>
+              </div>
+
+              <div class="ctrl-row">
+                <button class="ctrl" id="btnPlay" aria-label="Reproducir o pausar">&#9654;</button>
+                <button class="ctrl" id="btnMute" aria-label="Silenciar">&#128266;</button>
+                <input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volumen" />
+                <span class="time"><span id="tCur">0:00</span><span class="time-sep">/</span><span id="tDur">0:00</span></span>
+                <span class="spacer"></span>
+                <button class="ctrl ctrl-txt hidden" id="btnLive" aria-label="Ir al vivo">EN VIVO</button>
+                <select class="quality hidden" id="quality" aria-label="Calidad"><option value="-1">Auto</option></select>
+                <button class="ctrl" id="btnPip" aria-label="Picture in picture">&#9707;</button>
+                <button class="ctrl" id="btnFull" aria-label="Pantalla completa">&#9974;</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sources" id="sources"></div>
+          <div class="official" id="official"></div>
+          <div class="stage-info" id="stageInfo"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span id="footNote">SportV · reproductor propio, sin anuncios ni rastreadores.</span>
+    <span id="lastUpdate"></span>
+  </footer>
+
+</body>
+</html>

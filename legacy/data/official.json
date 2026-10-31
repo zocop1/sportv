@@ -1,0 +1,20 @@
+{
+  "_nota": "Fuentes oficiales. Regla práctica: solo se puede INCRUSTAR cuando el titular publica el partido en una plataforma que permite embed (YouTube). Los demás enlaces abren el sitio oficial, donde lo ves legalmente.",
+
+  "channels": [
+    { "name": "MLB · YouTube", "url": "https://www.youtube.com/@MLB/streams", "kind": "youtube", "region": "Global" },
+    { "name": "MLB.TV · juego gratis del día", "url": "https://www.mlb.com/tv", "kind": "site", "region": "Según región" },
+    { "name": "MLB.com · Gameday (radio)", "url": "https://www.mlb.com/live-stream-games", "kind": "site", "region": "Según región" },
+    { "name": "FIFA+ · partidos gratis", "url": "https://www.plus.fifa.com/", "kind": "site", "region": "Global" },
+    { "name": "UEFA.tv · gratis", "url": "https://www.uefa.tv/", "kind": "site", "region": "Global" },
+    { "name": "CONCACAF · YouTube", "url": "https://www.youtube.com/@Concacaf/streams", "kind": "youtube", "region": "América" },
+    { "name": "Liga MX · YouTube", "url": "https://www.youtube.com/@LigaBBVAMX/streams", "kind": "youtube", "region": "México" },
+    { "name": "ESPN Deportes · YouTube", "url": "https://www.youtube.com/@ESPNDeportes/streams", "kind": "youtube", "region": "LatAm" }
+  ],
+
+  "_buscadores": "Se abre una búsqueda en YouTube con los equipos del partido. Ahí encuentras si el titular lo está transmitiendo en vivo (y ese enlace sí sirve para '+ Añadir').",
+  "searches": [
+    { "name": "Buscar en YouTube", "url": "https://www.youtube.com/results?search_query={query}+en+vivo" },
+    { "name": "Buscar canal oficial", "url": "https://www.youtube.com/results?search_query={query}+oficial" }
+  ]
+}
